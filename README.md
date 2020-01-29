@@ -3,10 +3,10 @@ Data Structures in Java Programming Language.....  Array, LinkedList, Stack, Hea
 
 # DS Topics 
 
-ID              | Topic                        | Notes  
-----------------| -----------------------------| ------------------------
-01              | Introduction                 | [None]
-02              | Array                        | [None]
-03              | Stack, Queue		       | [None]	
-04              | LinkedList                   | [None]
-05              | LinkedList, Recursive        | [None]
+ID              | Topic                               | Notes                            | Codes
+----------------| ------------------------------------| ---------------------------------|----------------------
+01              | Introduction                        | [None]                           | [None] 
+02              | Array                               | [None]                           | [None]
+03              | Stack, Queue		              | [None]                           | [None]	     
+04              | LinkedList                          | [None]                           | [None]
+05              | LinkedList, Recursive               | [None]                           | [None]
