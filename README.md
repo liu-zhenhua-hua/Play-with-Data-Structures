@@ -1,9 +1,12 @@
 # Play-with-Data-Structures
 Data Structures in Java Programming Language.....  Array, LinkedList, Stack, Heap, Binary Search Tree AVL......
 
-# Data Structures 
+# DS Topics 
 
-ID              | Topic 
-----------------| ------------------
-01              | Introduction
-02              | Array
+ID              | Topic                        | Notes  
+----------------| -----------------------------| ------------------------
+01              | Introduction                 | [None]
+02              | Array                        | [None]
+03              | Stack, Queue		       | [None]	
+04              | LinkedList                   | [None]
+05              | LinkedList, Recursive        | [None]
