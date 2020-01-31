@@ -6,5 +6,6 @@ public class MainApp{
 		array.addFirst(15);
 		array.addFirst(30);
 		System.out.println(array);
+		System.out.println(array.getElement(0));
 	}
 }
