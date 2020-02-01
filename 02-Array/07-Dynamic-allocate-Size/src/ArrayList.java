@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-01 15:56:37
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-01 16:10:46
+* @Last Modified time: 2020-02-01 19:28:00
 *
 * In this Program, We add Dynamic allocate functionality, 
 *
@@ -17,11 +17,6 @@ public class ArrayList<E>{
 	private int size; //The Size of ArrayList, be attention, size is different with capacity.
 
 	
-	private static final int DEFAULT_CAPACITY = 10;
-
-	private static final Object[] EMPTY_LIST = {};
-
-
 
 	public ArrayList(int capacity){
 		elementsContainer = (E[]) new Object[capacity]; //Using Object ArrayList
@@ -30,8 +25,8 @@ public class ArrayList<E>{
 
 
 	public ArrayList(){
-		//this(15); //default capacity of the ArrayList without parameter
-		this.elementsContainer = (E[]) EMPTY_LIST;
+		this(15); //default capacity of the ArrayList without parameter
+		
 	}
 
 
@@ -79,15 +74,20 @@ public class ArrayList<E>{
 		Adding Element in specific position
 	*/
 	public void add(int index, E e){
-		/*
-			Checking the ArrayList is full or not
-		*/
-		if(size == elementsContainer.length)
-			throw new IllegalArgumentException("Adding Element operation failed, List is Full");
 
 		if(index<0 || index > size){
 			throw new IllegalArgumentException("Adding Failed, index >= 0 index<=size ");
 		}
+
+
+		/*
+			Checking the ArrayList is full or not
+		*/
+		if(size == elementsContainer.length)
+			//throw new IllegalArgumentException("Adding Element operation failed, List is Full");
+			// here we execute allocateSize private Method.
+			allocateSize(elementsContainer.length);
+
 
 		for(int i=size-1;i>=index;i--){
 			elementsContainer[i+1] = elementsContainer[i]; 
@@ -205,6 +205,20 @@ public class ArrayList<E>{
 		}
 		result.append(']');
 		return result.toString();
+
+	}
+
+
+	private void allocateSize(int resizeList){
+		int oldSize = elementsContainer.length;
+		int newSize = oldSize + (oldSize >> 1);
+
+		if(newSize - resizeList < 0)
+			newSize = resizeList;
+		if(newSize - Integer.MAX_VALUE > 0)
+			newSize = Integer.MAX_VALUE;
+
+		elementsContainer = Arrays.copyOf(elementData, newCapacity); 
 
 	}
 
