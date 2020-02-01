@@ -1,0 +1,211 @@
+/*
+* @Author: Tony Liu
+* @Date:   2020-02-01 15:56:37
+* @Modified by:   Tony Liu
+* @Last Modified time: 2020-02-01 16:10:46
+*
+* In this Program, We add Dynamic allocate functionality, 
+*
+*
+*/
+
+@SuppressWarnings("unchecked") 
+public class ArrayList<E>{
+
+	private E[] elementsContainer;  //internal container to save the Generic Data Type
+
+	private int size; //The Size of ArrayList, be attention, size is different with capacity.
+
+	
+	private static final int DEFAULT_CAPACITY = 10;
+
+	private static final Object[] EMPTY_LIST = {};
+
+
+
+	public ArrayList(int capacity){
+		elementsContainer = (E[]) new Object[capacity]; //Using Object ArrayList
+		size = 0;
+	}
+
+
+	public ArrayList(){
+		//this(15); //default capacity of the ArrayList without parameter
+		this.elementsContainer = (E[]) EMPTY_LIST;
+	}
+
+
+	/*
+		to get Capacity of ArrayList;
+	*/
+	public int getCapacity(){
+		return elementsContainer.length;
+	}
+
+	/*
+		to get Actual size of ArrayList;
+	*/
+	public int getSize(){
+		return size;
+	}
+
+	/*
+		the ArrayList is Empty or not
+	*/
+	public boolean isEmpty(){
+		return size == 0;
+	}
+
+
+	/*
+		Adding Element at last of ArrayList
+	*/
+	public void addLast(E e){
+
+		add(size,e);
+
+	}
+
+
+	/*
+		Adding Element at First of ArrayList
+	*/
+	public void addFirst(E e){
+		add(0,e);
+	}
+
+
+	/*
+		Adding Element in specific position
+	*/
+	public void add(int index, E e){
+		/*
+			Checking the ArrayList is full or not
+		*/
+		if(size == elementsContainer.length)
+			throw new IllegalArgumentException("Adding Element operation failed, List is Full");
+
+		if(index<0 || index > size){
+			throw new IllegalArgumentException("Adding Failed, index >= 0 index<=size ");
+		}
+
+		for(int i=size-1;i>=index;i--){
+			elementsContainer[i+1] = elementsContainer[i]; 
+		}
+
+		elementsContainer[index] = e;
+
+		size++;
+
+	}
+
+	/*
+		get the Element from index;
+	*/
+	public E getElement(int index){
+		if(index < 0 || index >=size){
+			throw new IllegalArgumentException("Invalid index value, please try again");
+		}
+
+		return elementsContainer[index];
+	}
+
+
+	public void setElement(int index,E e){
+		if(index < 0 || index >= size){
+			throw new IllegalArgumentException("Invalid index value, please try again");
+		}
+
+		elementsContainer[index] = e;
+	}
+
+	/*
+		Checking the ArrayList contains 
+		the element e existing or not.
+	*/
+
+	public boolean exists(E e){
+		for(int i=0; i<size;i++){
+			if(elementsContainer[i] == e)
+				return true;
+		}
+
+		return false;
+	}
+
+
+	/*
+		To return the index of Element e
+		otherwise return -1;
+	*/
+	public int find(E e){
+		for(int i=0;i<size;i++){
+			if(elementsContainer[i] == e)
+				return i;
+		}
+		return -1;
+	}
+
+
+	/*
+		remove the element of index,
+		and return the element 
+	*/
+
+	public E delete(int index){
+		if(index < 0 || index >= size)
+			throw new IllegalArgumentException("delete failed, invalid index, please try again");
+
+		E removedElement = elementsContainer[index];
+		for(int i=index+1;i<size;i++)
+			elementsContainer[i-1] = elementsContainer[i];
+
+		size--;
+		return removedElement;
+
+
+	}	
+
+
+	/*
+		remove the First Element, return the removed element
+	*/
+	public E deleteFirst(){
+		return delete(0);
+	}
+
+
+	public E deleteLast(){
+		return delete(size-1);
+	}
+
+
+
+	/*
+		delete the Element from ArrayList
+	*/
+	public void deleteElement(E e){
+		int index = find(e);
+		if(index != -1)
+			delete(index);
+	}
+
+
+
+	@Override
+	public String toString(){
+		StringBuilder result = new StringBuilder();
+		result.append(String.format("Array's size := %d, Array's Capacity := %d\n ",size,elementsContainer.length));
+		result.append('[');
+
+		for(int i=0;i<size;i++){
+			result.append(elementsContainer[i]);
+			if(i != size-1)
+				result.append(",");
+		}
+		result.append(']');
+		return result.toString();
+
+	}
+
+}
