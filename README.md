@@ -10,3 +10,4 @@ ID              | Topic                               | Notes                   
 03              | Stack, Queue		              | [None]                           | [None]	     
 04              | LinkedList                          | [None]                           | [None]
 05              | LinkedList, Recursive               | [None]                           | [None]
+06              | Binary Search Tree                  | [None]                           | [None]
