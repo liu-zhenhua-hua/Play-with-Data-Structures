@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-03 13:09:47
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-03 15:54:04
+* @Last Modified time: 2020-02-03 16:00:12
 */
 
 public class ArrayList<E>{
@@ -135,6 +135,15 @@ public class ArrayList<E>{
 	}
 
 
+	/*
+		delete item from ArrayList
+	*/
+	public void deleteElement(E e){
+		int index = fine(e);
+		if(index != -1)
+			delete(index);
+
+	}
 
 
 
