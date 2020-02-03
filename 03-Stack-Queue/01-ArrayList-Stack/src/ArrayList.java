@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-03 13:09:47
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-03 16:00:12
+* @Last Modified time: 2020-02-03 16:07:23
 */
 
 public class ArrayList<E>{
@@ -161,5 +161,22 @@ public class ArrayList<E>{
 		result.append(']');
 		return result.toString();
 	}
+
+
+
+	private void allocateSize(int resizeList){
+		int oldSize = elementContainer.length;
+		int newSize = oldSize + (oldSize >> 1);
+
+		if(newSize - resizeList < 0)
+			newSize = resizeList;
+		if(newSize - Integer.MAX_VALUE > 0)
+			newSize = Integer.MAX_VALUE;
+
+		elementsContainer = Arrays.copyOf(elementData, newCapacity); 
+
+	}
+
+
 
 }
