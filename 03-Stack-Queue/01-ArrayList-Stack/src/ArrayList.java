@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-03 13:09:47
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-03 14:10:06
+* @Last Modified time: 2020-02-03 14:16:11
 */
 
 public class ArrayList<E>{
@@ -105,6 +105,32 @@ public class ArrayList<E>{
 		}
 		return -1;
 	}
+
+
+
+	/*
+		return deleted element at specific position;
+	*/
+	public E delete(int index, E e){
+		if(index < 0 || index >= size)
+			throw new IllegalArgumentException("deleted failed, invalid index, please try again !");
+
+		E removedElement = elementContainer[index];
+		for(int i=index+1;i<size;i++)
+			elementContainer[i-1] = elementContainer[i];
+
+		size--;
+		return removedElement;
+	}
+
+
+
+
+
+
+
+
+
 
 
 
