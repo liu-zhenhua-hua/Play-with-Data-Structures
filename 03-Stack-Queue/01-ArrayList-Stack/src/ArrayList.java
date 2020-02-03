@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-03 13:09:47
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-03 14:06:06
+* @Last Modified time: 2020-02-03 14:10:06
 */
 
 public class ArrayList<E>{
@@ -94,6 +94,17 @@ public class ArrayList<E>{
 		return false;
 	}
 
+	/*
+		return the index value when we find out the element in the ArrayList
+		otherwise return -1
+	*/
+	public int find(E e){
+		for(int i=0;i<size;i++){
+			if(elementContainer[i].equals(e))
+				return i;
+		}
+		return -1;
+	}
 
 
 
