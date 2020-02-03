@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-03 13:09:47
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-03 13:56:37
+* @Last Modified time: 2020-02-03 14:01:02
 */
 
 public class ArrayList<E>{
@@ -65,7 +65,24 @@ public class ArrayList<E>{
 	}
 
 
-	
+
+	public E getElement(int index){
+		if(index < 0 || index >=size)
+			throw new IllegalArgumentException("Invalid index value, please try again !");
+
+		return elementContainer[index];
+	}
+
+
+	public void setElement(int index, E e){
+		if(index < 0 || index >=size)
+			throw new IllegalArgumentException("Invalid index value, please try again !");
+
+		elementContainer[index] = e;
+	}
+
+
+
 
 
 	@Override
