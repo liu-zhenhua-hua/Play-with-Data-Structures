@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-03 13:09:47
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-03 16:07:23
+* @Last Modified time: 2020-02-03 17:53:37
 */
 
 public class ArrayList<E>{
@@ -81,6 +81,15 @@ public class ArrayList<E>{
 		elementContainer[index] = e;
 	}
 
+
+
+	public E getLastElement(){
+		return getElement(size-1);
+	}
+
+	public E getFirstElement(){
+		return getElement(0);
+	}
 
 
 	/*
