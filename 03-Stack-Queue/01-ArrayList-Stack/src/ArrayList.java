@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-03 13:09:47
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-03 13:46:17
+* @Last Modified time: 2020-02-03 13:51:04
 */
 
 public class ArrayList<E>{
@@ -33,6 +33,18 @@ public class ArrayList<E>{
 
 	public int getSize(){
 		return size;
+	}
+
+
+
+	public void add(int index, E e){
+		if(index < 0 || index > size)
+			throw new IllegalArgumentException("Add Failed, invalid index, please try again ");
+
+		if(size == elementContainer.length)
+			throw new IllegalArgumentException("ArrayList is Full, Adding Element is Failed ");
+		
+
 	}
 
 
