@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-03 13:09:47
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-03 14:01:02
+* @Last Modified time: 2020-02-03 14:06:06
 */
 
 public class ArrayList<E>{
@@ -81,6 +81,18 @@ public class ArrayList<E>{
 		elementContainer[index] = e;
 	}
 
+
+
+	/*
+	 Checking element exists in the ArrayList or not.
+	*/
+	public boolean exists(E e){
+		for(int i=0;i<size;i++){
+			if(elementContainer[i].equals(e))
+				return true;
+		}
+		return false;
+	}
 
 
 
