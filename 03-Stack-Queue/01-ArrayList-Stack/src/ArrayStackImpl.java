@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-03 17:35:33
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-03 18:00:31
+* @Last Modified time: 2020-02-03 19:33:18
 */
 
 
@@ -53,16 +53,19 @@ public class ArrayStackImpl<E> implements Stack<E>{
 	}
 
 
-	
+	@Override
+	public String toString(){
+		StringBuilder result = new StringBuilder();
+		result.append("Stack : ");
+		result.append('[');
+		for(int i=0;i<array.getSize();i++){
+			result.append(array.getElement(i));
+			if( i != array.getSize()-1)
+				result.append(",");
+		}
+		result.append("] top ");
+		return result.toString();
 
-
-
-
-
-
-
-
-
-
+	}
 
 }
