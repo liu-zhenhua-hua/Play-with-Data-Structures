@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-03 13:09:47
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-03 14:16:11
+* @Last Modified time: 2020-02-03 15:54:04
 */
 
 public class ArrayList<E>{
@@ -111,7 +111,7 @@ public class ArrayList<E>{
 	/*
 		return deleted element at specific position;
 	*/
-	public E delete(int index, E e){
+	public E delete(int index){
 		if(index < 0 || index >= size)
 			throw new IllegalArgumentException("deleted failed, invalid index, please try again !");
 
@@ -125,10 +125,14 @@ public class ArrayList<E>{
 
 
 
+	public E deleteFirst(){
+		return delete(0);
+	}
 
 
-
-
+	public E deleteLast(){
+		return delete(size-1);
+	}
 
 
 
