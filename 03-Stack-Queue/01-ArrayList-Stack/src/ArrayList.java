@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-03 13:09:47
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-03 13:51:04
+* @Last Modified time: 2020-02-03 13:54:32
 */
 
 public class ArrayList<E>{
@@ -43,7 +43,13 @@ public class ArrayList<E>{
 
 		if(size == elementContainer.length)
 			throw new IllegalArgumentException("ArrayList is Full, Adding Element is Failed ");
-		
+
+		for(int i=size-1;i>=index;i--){
+			elementContainer[i+1] = elementContainer[i];
+		}
+
+		elementContainer[index] = e;
+		size++;
 
 	}
 
