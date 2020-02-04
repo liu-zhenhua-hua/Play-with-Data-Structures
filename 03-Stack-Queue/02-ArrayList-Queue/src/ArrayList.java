@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-04 10:44:15
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-04 12:39:15
+* @Last Modified time: 2020-02-04 13:44:48
 *
 *
 * Queue based ArrayList
@@ -88,6 +88,15 @@ public class ArrayList<E>{
 			throw new IllegalArgumentException("Invalid Argument, Please Try it again !");
 
 		elementContainer[index] = e;
+	}
+
+
+	public E getLastElement(){
+		return getElement(size-1);
+	}
+
+	public E getFirstElement(){
+		return getElement(0);
 	}
 
 
