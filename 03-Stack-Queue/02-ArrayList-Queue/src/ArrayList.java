@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-04 10:44:15
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-04 11:05:53
+* @Last Modified time: 2020-02-04 11:17:15
 *
 *
 * Queue based ArrayList
@@ -57,15 +57,31 @@ public class ArrayList<E>{
 
 	}
 
-
+	/*
+		Add Element at First Position;
+	*/
 	public void addFirst(E e){
 		add(0,e);
 	}
 
-
+	/*
+		Add Element at Last Position;
+	*/
 	public void addLast(E e){
 		add(size,e);
 	}
+
+
+
+	public E getElement(int index){
+		if(index < 0 || index >= size)
+			throw new IllegalArgumentException("Invalid Argument, Please Try it again !");
+
+		return elementContainer[index];
+
+	}
+
+
 
 
 
