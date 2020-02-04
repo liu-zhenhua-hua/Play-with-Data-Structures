@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-04 10:44:15
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-04 11:03:22
+* @Last Modified time: 2020-02-04 11:05:53
 *
 *
 * Queue based ArrayList
@@ -57,6 +57,15 @@ public class ArrayList<E>{
 
 	}
 
+
+	public void addFirst(E e){
+		add(0,e);
+	}
+
+
+	public void addLast(E e){
+		add(size,e);
+	}
 
 
 
