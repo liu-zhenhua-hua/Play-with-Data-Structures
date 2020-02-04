@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-04 10:44:15
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-04 11:17:15
+* @Last Modified time: 2020-02-04 11:19:37
 *
 *
 * Queue based ArrayList
@@ -81,6 +81,13 @@ public class ArrayList<E>{
 
 	}
 
+
+	public void setElement(int index,E e){
+		if(index < 0 || index >= size)
+			throw new IllegalArgumentException("Invalid Argument, Please Try it again !");
+
+		elementContainer[index] = e;
+	}
 
 
 
