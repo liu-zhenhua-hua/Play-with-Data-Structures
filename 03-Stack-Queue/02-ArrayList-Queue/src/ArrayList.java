@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-04 10:44:15
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-04 12:31:23
+* @Last Modified time: 2020-02-04 12:39:15
 *
 *
 * Queue based ArrayList
@@ -46,7 +46,8 @@ public class ArrayList<E>{
 			throw new IllegalArgumentException("Invalid Argument, please try again !");
 
 		if(size == elementContainer.length)
-			throw new IllegalArgumentException("The ArrayList is Full, Adding element is Failed !");
+			//throw new IllegalArgumentException("The ArrayList is Full, Adding element is Failed !");
+			allocateSize(elementContainer.length);
 
 		for(int i=size-1;i>=index;i--){
 			elementContainer[i+1] = elementContainer[i];
@@ -144,7 +145,16 @@ public class ArrayList<E>{
 
 
 
-	
+	private void allocateSize(int resizeList){
+		int oldSize = elementsContainer.length;
+		int newSize = oldSize + (oldSize >> 1);
+
+		if(newSize - resizeList < 0)
+			newSize = resizeList;
+		if(newSize - Integer.MAX_VALUE > 0)
+			newSize = Integer.MAX_VALUE;
+
+		elementsContainer = Arrays.copyOf(elementData, newSize); 
 
 
 
