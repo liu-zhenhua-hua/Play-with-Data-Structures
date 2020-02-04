@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-04 10:44:15
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-04 12:19:29
+* @Last Modified time: 2020-02-04 12:31:23
 *
 *
 * Queue based ArrayList
@@ -133,6 +133,18 @@ public class ArrayList<E>{
 
 
 
+	public E deleteFirst(){
+		return delete(0);
+	}
+
+
+	public E deleteLast(){
+		return delete(size-1);
+	}
+
+
+
+	
 
 
 
