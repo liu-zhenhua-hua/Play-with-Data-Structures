@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-04 10:44:15
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-04 11:19:37
+* @Last Modified time: 2020-02-04 11:22:59
 *
 *
 * Queue based ArrayList
@@ -89,6 +89,18 @@ public class ArrayList<E>{
 		elementContainer[index] = e;
 	}
 
+
+
+	public boolean exists(E e){
+		for(int i=0;i<size;i++){
+			if(elementContainer[i].equals(e))
+				return true;
+		}
+
+		return false;
+
+
+	}
 
 
 
