@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-04 10:44:15
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-04 12:12:03
+* @Last Modified time: 2020-02-04 12:19:29
 *
 *
 * Queue based ArrayList
@@ -116,7 +116,24 @@ public class ArrayList<E>{
 	}
 
 
-	
+	/*
+		return the deleted element at index of ArrayList;
+	*/
+	public E delete(int index){
+		if(index < 0 || index >= size)
+			throw new IllegalArgumentException("delete failed, invalid index, please try again");
+
+		E removedElement = elementContainer[index];
+		for(int i=index+1;i<size;i++)
+			elementContainer[i-1] = elementContainer[i];
+
+		size--;
+		return removedElement;
+	}
+
+
+
+
 
 
 	@Override
