@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-05 22:04:26
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-05 22:12:24
+* @Last Modified time: 2020-02-05 22:20:37
 */
 
 public class ListNode{
@@ -30,6 +30,18 @@ public class ListNode{
 
 	}
 
+	@Override
+	public String toString(){
+		StringBuilder result = new StringBuilder();
 
+		ListNode cur = this;
+		while(cur != null){
+			result.append(cur.val + "->");
+			cur = cur.next;
+		}
+
+		result.append("NULL");
+		return result.toString();
+	}
 
 }
