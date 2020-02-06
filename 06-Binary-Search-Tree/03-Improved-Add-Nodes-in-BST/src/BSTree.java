@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-06 22:12:42
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-06 22:20:39
+* @Last Modified time: 2020-02-06 22:33:52
 */
 
 public class BSTree<E extends Comparable<E>>{
@@ -46,7 +46,7 @@ public class BSTree<E extends Comparable<E>>{
 
 
 	private Node add(Node node,E e){
-		if(root == null)
+		if(node == null)
 			size++;
 			return new Node(e);
 
