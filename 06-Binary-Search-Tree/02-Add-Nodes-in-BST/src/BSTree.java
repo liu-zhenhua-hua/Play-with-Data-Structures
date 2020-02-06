@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-06 19:56:45
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-06 20:51:07
+* @Last Modified time: 2020-02-06 21:01:35
 */
 
 public class BSTree<E extends Comparable<E>>{
@@ -69,6 +69,6 @@ public class BSTree<E extends Comparable<E>>{
 			add(node.right,e);
 
 	}
-
+	
 
 }
