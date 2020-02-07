@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-07 15:30:38
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-07 16:09:40
+* @Last Modified time: 2020-02-07 16:14:23
 */
 
 import java.util.Stack;
@@ -150,7 +150,29 @@ public class BSTree<E extends Comparable<E>>{
     }
 
 
+    public void levelTraverseOrder(){
 
+    	if(root == null)
+    		return;
+
+    	Queue<Node> q = new Queue<>();
+    	q.add(root);
+    	while(!q.isEmpty()){
+    		Node cur = q.remove();
+    		System.out.println(cur.e);
+
+
+    		if(cur.left != null)
+    			q.add(cur.left);
+    		if(cur.right != null)
+    			a.add(cur.right);
+
+
+    	}
+
+
+
+    }
 
 
 
