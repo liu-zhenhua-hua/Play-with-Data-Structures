@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-07 15:30:38
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-07 15:41:37
+* @Last Modified time: 2020-02-07 16:05:31
 */
 
 import java.util.Stack;
@@ -83,6 +83,40 @@ public class BSTree<E extends Comparable<E>>{
 	}
 
 
+	public void preOrder(){
+		preOrder(root);
+	}
+
+	private void preOrder(Node node){
+		if(node == null)
+			return null;
+
+		System.out.println(node.e);
+		preOrder(node.left);
+		preOrder(node.right);
+
+	}
+
+	public void nonRecursivePreOrder(){
+		if(root == null)
+			return
+
+		Stack<Node> stack = new Stack<>();
+		stack.push(root);
+		while(!stack.isEmpty()){
+			Node cur = stack.pop();
+			System.out.println(node.e);
+
+
+			if(cur.right != null)
+				stack.push(cur.right);
+			if(cur.left != null)
+				stack.push(cur.left);
+
+		}
+
+
+	}
 
 
 
