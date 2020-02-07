@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-07 15:30:38
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-07 16:05:31
+* @Last Modified time: 2020-02-07 16:09:40
 */
 
 import java.util.Stack;
@@ -119,15 +119,35 @@ public class BSTree<E extends Comparable<E>>{
 	}
 
 
+	public void inOrder(){
+		inOrder(root);
+	}
 
 
+	private void inOrder(Node node){
+		if(node == null)
+			return;
+
+		inOrder(node.left);
+		System.out.println(node.e);
+		inOrder(node.right);
+
+	}
 
 
+	public void postOrder(){
+        postOrder(root);
+    }
 
 
+	private void postOrder(Node node){
+        if(node == null)
+            return;
 
-
-
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.println(node.e);
+    }
 
 
 
