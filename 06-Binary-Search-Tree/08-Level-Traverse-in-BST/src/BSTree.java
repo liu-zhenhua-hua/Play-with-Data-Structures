@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-07 15:30:38
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-07 15:37:34
+* @Last Modified time: 2020-02-07 15:41:37
 */
 
 import java.util.Stack;
@@ -62,6 +62,28 @@ public class BSTree<E extends Comparable<E>>{
 
 		return node;
 	}
+
+
+	public boolean contains(E e){
+		return contains(root,e);
+	}
+
+
+	private boolean contains(Node node,E e){
+		if(node == null)
+			return false;
+
+		if(e.comparaTo(node.e) == 0)
+			return true;
+		else if(e.comparaTo(node.e) < 0)
+			return contains(node.left,e);
+		else
+			return contains(node.right,e);
+
+	}
+
+
+
 
 
 
