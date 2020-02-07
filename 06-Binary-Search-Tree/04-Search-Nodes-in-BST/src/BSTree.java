@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-07 09:25:27
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-07 09:31:31
+* @Last Modified time: 2020-02-07 10:01:38
 */
 public class BSTree<E extends Comparable<E>>{
 
@@ -37,12 +37,16 @@ public class BSTree<E extends Comparable<E>>{
 		return size == 0;
 	}
 
-
+	/*
+		Add Elements into the Binary Search Tree.
+	*/
 	public void add(E e){
 		root = add(root,e);
 	}
 
-
+	/*
+		Internal Method to Add Elements into the Binary Search Tree.
+	*/
 	private Node add(Node node,E e){
 		if(node == null){
 			size++;
@@ -56,5 +60,28 @@ public class BSTree<E extends Comparable<E>>{
 
 		return node;
 	}
+
+
+
+	/*
+		Checking the Elements exists in the BST or not
+	*/
+	public boolean contains(E e){
+		return contains(root,e);
+	}
+
+
+	private boolean contains(Node node,E e){
+		if(node == null)
+			return false;
+
+		if(e.compareTo(node.e) == 0)
+			return true;
+		else if(e.compareTo(node.e) < 0)
+			return contains(node.left,e);
+		else
+			return contains(node.right,e);
+	}
+
 
 }
