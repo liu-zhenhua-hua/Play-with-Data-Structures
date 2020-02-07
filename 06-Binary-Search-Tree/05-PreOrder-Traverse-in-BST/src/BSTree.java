@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-07 10:14:20
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-07 10:28:37
+* @Last Modified time: 2020-02-07 10:34:01
 */
 
 
@@ -83,10 +83,22 @@ public class BSTree<E extends Comparable<E>>{
 			return contains(node.right,e);
 	}
 
+	/*
+		preOrder Traverse
+	*/
+	public void preOrder(){
+		preOrder(root);
+	}
 
 
+	private void preOrder(Node node){
+		if(node == null)
+			return;
 
+		System.out.println(node.e);
+		preOrder(node.left);
+		preOrder(node.right);
 
-
+	}
 
 }
