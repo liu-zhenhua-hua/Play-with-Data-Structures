@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-08 15:27:23
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-08 15:46:32
+* @Last Modified time: 2020-02-08 15:54:25
 */
 import java.util.LinkedList;
 import java.util.Queue;
@@ -172,20 +172,42 @@ public class BSTree<E extends Comparable<E>>{
     }
 
 
+    public E miniMum(){
+    	if(size == 0)
+    		throw new IllegalArgumentException("Binary Search Tree is Empty !");
+
+    	Node miniNode = miniMum(root);
+    	return miniNode.e;
+    }
+
+
+    private Node miniMum(Node node){
+    	if(node.left == null)
+    		return node;
+
+    	return miniMum(node.left);
+    }
 
 
 
+    public E maxiMum(){
+    	if(size == 0)
+    		throw new IllegalArgumentException("Binary Search Tree is Empty !");
+
+    	Node maxiNode = maxiMum(root);
+    	return maxiNode.e;
+    }
 
 
+    private Node maxiMum(Node node){
+    	if(node.right == null)
+    		return node;
 
-
-
-
-
-
-
+    	return maxiMum(node.right);
+    }
 
 
     
+
 
 }
