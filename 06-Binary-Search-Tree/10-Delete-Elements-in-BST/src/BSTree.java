@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-08 15:27:23
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-08 15:57:24
+* @Last Modified time: 2020-02-08 16:06:39
 */
 import java.util.LinkedList;
 import java.util.Queue;
@@ -213,12 +213,22 @@ public class BSTree<E extends Comparable<E>>{
     */
     public E removeMin(){
     	E remElement = miniMum();
-
+    	root = removeMin(root);
     	return remElement;
     }
 
     private Node removeMin(Node node){
-    	
+
+    	if(node.left == null){
+    		Node rightNode = node.right;
+    		node.right = null;
+    		size--;
+    		return rightNode;
+    	}
+
+    	node.left = removeMin(node.left);
+    	return node;
+
     }
 
 
