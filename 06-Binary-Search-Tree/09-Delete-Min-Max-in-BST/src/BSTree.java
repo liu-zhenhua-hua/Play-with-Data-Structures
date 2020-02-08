@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-08 11:13:10
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-08 11:21:36
+* @Last Modified time: 2020-02-08 11:28:02
 */
 
 import java.util.LinkedList;
@@ -65,10 +65,23 @@ public class BSTree<E extends Comparable<E>>{
 
 
 
+    public boolean contains(E e){
+    	return contains(root,e);
+    }
 
 
+    private boolean contains(Node node,E e){
+    	if(node == null)
+    		return false;
 
+    	if(e.comparaTo(node.e) ==0)
+    		return true;
+    	else if(e.comparaTo(node.e) < 0)
+    		return contains(node.left,e);
+    	else
+    		return contains(node.right,e);
 
+    }
 
 
 
