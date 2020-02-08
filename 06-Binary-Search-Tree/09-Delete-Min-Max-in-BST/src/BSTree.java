@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-08 11:13:10
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-08 13:43:42
+* @Last Modified time: 2020-02-08 14:01:20
 */
 
 import java.util.LinkedList;
@@ -194,7 +194,43 @@ public class BSTree<E extends Comparable<E>>{
     }
 
 
+    public E maxiMum(){
+    	if(size == 0)
+    		throw new IllegalArgumentException("Binary Search Tree is Empty");
+
+    	Node maxiNode = maxiMum(root);
+    	return maxiNode.e;
+    }
+
+
+
+    private Node maxiMum(Node node){
+    	if(node.right == null)
+    		return node;
+
+    	return maxiMum(node.right);
+    }
+
+
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
