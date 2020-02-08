@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-08 15:27:23
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-08 16:06:39
+* @Last Modified time: 2020-02-08 16:09:33
 */
 import java.util.LinkedList;
 import java.util.Queue;
@@ -231,6 +231,39 @@ public class BSTree<E extends Comparable<E>>{
 
     }
 
+
+
+    public E removeMax(){
+        E remElement = maxiMum();
+        root = removeMax(root);
+        return remElement;
+    }
+
+
+    private Node removeMax(Node node){
+
+        if(node.right == null){
+            Node leftNode = node.left;
+            node.left = null;
+            size --;
+            return leftNode;
+        }
+
+        node.right = removeMax(node.right);
+        return node;
+    }
+
+    /*
+		remove Element from Binary Search Tree.
+    */
+    public void remove(E e){
+        root = remove(root, e);
+    }
+
+
+    private Node remove(Node node,E e){
+    	
+    }
 
 
 
