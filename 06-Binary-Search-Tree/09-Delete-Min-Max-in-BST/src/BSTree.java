@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-08 11:13:10
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-08 11:31:42
+* @Last Modified time: 2020-02-08 11:35:04
 */
 
 import java.util.LinkedList;
@@ -84,5 +84,36 @@ public class BSTree<E extends Comparable<E>>{
 
 
     }
+
+    /*
+    	Binary Search Tree preOrder Recursive implementation
+    */
+    public void preOrder(){
+    	preOrder(root);
+    }
+
+
+    private void preOrder(Node node){
+    	if(node == null)
+    		return;
+
+    	System.out.println(node.e);
+    	preOrder(node.left);
+    	preOrder(node.right);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
