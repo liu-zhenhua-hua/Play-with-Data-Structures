@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-08 11:13:10
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-08 11:35:04
+* @Last Modified time: 2020-02-08 11:55:26
 */
 
 import java.util.LinkedList;
@@ -105,7 +105,21 @@ public class BSTree<E extends Comparable<E>>{
 
 
 
+    public void nonRecursivePreOrder(){
 
+    	Stack<Node> stack = new Stack<>();
+    	stack.push(root);
+    	while(!stack.isEmpty()){
+    		Node cur = stack.pop();
+    		System.out.println(node.e);
+
+    		if(cur.right != null)
+    			stack.push(cur.right);
+    		if(cur.left != null)
+    			stack.push(cur.left);
+    	}
+
+    }
 
 
 
