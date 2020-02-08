@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-08 15:27:23
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-08 15:54:25
+* @Last Modified time: 2020-02-08 15:57:24
 */
 import java.util.LinkedList;
 import java.util.Queue;
@@ -207,7 +207,29 @@ public class BSTree<E extends Comparable<E>>{
     }
 
 
-    
+    /*
+		removing the mini Element from BST
+		and return it
+    */
+    public E removeMin(){
+    	E remElement = miniMum();
+
+    	return remElement;
+    }
+
+    private Node removeMin(Node node){
+    	
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 }
