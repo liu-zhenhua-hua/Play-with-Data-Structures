@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-08 15:27:23
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-08 16:13:13
+* @Last Modified time: 2020-02-08 16:23:36
 */
 import java.util.LinkedList;
 import java.util.Queue;
@@ -288,8 +288,14 @@ public class BSTree<E extends Comparable<E>>{
             }
 
 
-            
+            Node successor = miniMum(node.right);
+            successor.right = removeMin(node.right);
+            successor.left = node.left;
 
+
+            node.left = node.right = null;
+
+            return successor;
 
     	}
     }
