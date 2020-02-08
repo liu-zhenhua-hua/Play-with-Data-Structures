@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-08 11:13:10
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-08 14:01:20
+* @Last Modified time: 2020-02-08 14:07:21
 */
 
 import java.util.LinkedList;
@@ -212,16 +212,47 @@ public class BSTree<E extends Comparable<E>>{
     }
 
 
-    
+    public E removeMin(){
+    	E rem = miniMum();
+    	root = removeMin(root);
+    	return rem;
+
+    }
+
+
+    private Node removeMin(Node node){
+    	if(node.left == null){
+    		Node rightNode = node.right;
+    		node.right = null;
+    		size--;
+    		return rightNode;
+    	}
+
+    	node.left = removeMin(node.left);
+    	return node;
+    }
 
 
 
+    public E removeMax(){
+    	E rem = maxiMum();
+    	root = removeMax(root);
+    	return rem;
+    }
 
 
+    private Node removeMax(Node node){
+    	if(node.right == null){
+    		Node leftNode = node.left;
+    		node.left = null;
+    		size--;
+    		return leftNode;
+    	}
 
+    	node.right = removeMax(node.right);
+    	return node;
 
-
-
+    }
 
 
 
