@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-08 15:27:23
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-08 16:09:33
+* @Last Modified time: 2020-02-08 16:13:13
 */
 import java.util.LinkedList;
 import java.util.Queue;
@@ -262,7 +262,36 @@ public class BSTree<E extends Comparable<E>>{
 
 
     private Node remove(Node node,E e){
-    	
+    	if(node == null)
+    		return null;
+
+    	if(e.comparaTo(node.e) < 0){
+    		node.left = remove(node.left,e);
+    		return node;
+    	}else if(e.comparaTo(node.e) > 0){
+    		node.right = remove(node.right,e);
+    		return node;
+    	}else{
+
+    		if(node.left == null){
+                Node rightNode = node.right;
+                node.right = null;
+                size --;
+                return rightNode;
+            }
+
+            if(node.right == null){
+                Node leftNode = node.left;
+                node.left = null;
+                size --;
+                return leftNode;
+            }
+
+
+            
+
+
+    	}
     }
 
 
