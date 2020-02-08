@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-08 11:13:10
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-08 13:22:33
+* @Last Modified time: 2020-02-08 13:43:42
 */
 
 import java.util.LinkedList;
@@ -122,9 +122,79 @@ public class BSTree<E extends Comparable<E>>{
     }
 
 
-    
-    
+    public void inOrder(){
+    	inOrder(root);
+    }
 
+
+    private void inOrder(Node node, E e){
+    	if(node == null)
+    		return;
+    	inOrder(node.left);
+    	System.out.println(node.e);
+    	inOrder(node.right);
+    }
+
+
+
+    public void postOrder(){
+    	postOrder(root);
+    }
+
+
+    private void postOrder(Node node){
+    	if(node == null)
+    		return;
+
+    	postOrder(node.left);
+    	postOrder(node.right);
+    	System.out.println(node.e);
+    }
+
+
+
+    public void levelOrder(){
+    	if(root == null)
+    		return;
+
+    	Queue<Node> q = new LinkedList<>();
+    	q.add(root);
+    	while(!q.isEmpty()){
+    		Node cur = q.remove();
+    		System.out.println(node.e);
+
+    		if(cur.left != null)
+    			q.add(cur.left);
+    		if(cur.right != null)
+    			q.add(cur.right);
+
+
+    	}
+
+    }
+
+
+    //Get the minimum Element of Binary Search Tree.
+    public E miniMum(){
+    	if(size == 0)
+    		throw new IllegalArgumentException("Binary Search Tree is Empty");
+
+    	Node miniNode = miniMum(root);
+    	return miniNode.e;
+    }
+
+
+    private Node miniMum(Node node){
+    	if(node.left == null)
+    		return node;
+
+    	return miniMum(node.left);
+
+
+    }
+
+
+    
 
 
 
