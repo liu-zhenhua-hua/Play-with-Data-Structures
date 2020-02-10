@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-10 13:59:51
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-10 14:00:22
+* @Last Modified time: 2020-02-10 18:27:27
 */
 @SuppressWarnings("unchecked") 
 public class ArrayList<E>{
@@ -184,6 +184,17 @@ public class ArrayList<E>{
 		if(index != -1)
 			delete(index);
 	}
+
+
+	public void swap(int i,int j){
+		if(i<0 || i >= size || j < 0 || j>= size)
+			throw new IllegalArgumentException("Index is illegal !");
+
+		E e = elementsContainer[i];
+		elementsContainer[i] = elementsContainer[j];
+		elementsContainer[j] = e;
+	}
+
 
 
 

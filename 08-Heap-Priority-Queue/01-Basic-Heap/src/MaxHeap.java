@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-10 14:01:57
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-10 16:52:17
+* @Last Modified time: 2020-02-10 18:35:23
 */
 
 public class MaxHeap<E extends Comparable<E>>{
@@ -42,5 +42,22 @@ public class MaxHeap<E extends Comparable<E>>{
 	private int rightChild(int index){
 		return index * 2 + 2;
 	}
+
+
+	public void add(E e){
+		data.addLast(e);
+		shiftUp(data.getSize() - 1);
+	}
+
+
+	private void shiftUp(int k){
+		while(k > 0 && data.getElement(parent(k)).comparaTo(data.getElement(k)) < 0 ){
+			data.swap(k,parent(k));
+			k = parent(k);
+		}
+	} 
+
+
+
 
 }
