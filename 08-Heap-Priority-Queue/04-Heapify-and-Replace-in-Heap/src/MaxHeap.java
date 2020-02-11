@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-10 14:01:57
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-10 18:35:23
+* @Last Modified time: 2020-02-11 23:04:28
 */
 
 public class MaxHeap<E extends Comparable<E>>{
@@ -58,6 +58,55 @@ public class MaxHeap<E extends Comparable<E>>{
 	} 
 
 
+
+	/*
+		findMax Element in the Heap
+	*/
+	public E findMax(){
+		if(data.getSize() == 0)
+			throw new IllegalArgumentException("Can not findMax while Heap is Empty !");
+		return data.getElement(0);
+	}
+
+
+
+	/*
+		extract the Max Value
+	*/
+	public E extractMax(){
+		E ret = findMax();
+		data.swap(0,data.getSize());
+		data.deleteLast();
+		shiftDown(0);
+
+		return ret;
+
+	}
+
+
+	private void shiftDown(int k){
+		while(leftChild(k) < data.getSize()){
+			int j = leftChild(k);
+			if(j+1 < data.getSize() && 
+				data.get(j+1).comparaTo(data.get(j)) > 0)
+				j++;
+
+			if(data.getElement(k).comparaTo(data.getElement(j)) >= 0)
+				break;
+
+			data.swap(k,j);
+			k = j;
+		}
+	}
+
+
+
+	public E replace(){
+		E ret = findMax();
+		data.set(0,e);
+		shiftDown(0);
+		return ret;
+	}
 
 
 }
