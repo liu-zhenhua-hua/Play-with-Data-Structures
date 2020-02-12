@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-12 21:24:38
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-12 21:42:12
+* @Last Modified time: 2020-02-12 21:43:38
 */
 
 public class PriorityQueue<E extends Comparable<E>> implements Queue<E>{
@@ -29,4 +29,12 @@ public class PriorityQueue<E extends Comparable<E>> implements Queue<E>{
 	public E getFront(){
 		return maxHeap.findMax();
 	}
+
+
+	@Override
+	public void enqueue(E e){
+		maxHeap.add(e);
+	}
+
+	
 }
