@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-12 21:24:38
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-12 21:33:34
+* @Last Modified time: 2020-02-12 21:42:12
 */
 
 public class PriorityQueue<E extends Comparable<E>> implements Queue<E>{
@@ -23,5 +23,10 @@ public class PriorityQueue<E extends Comparable<E>> implements Queue<E>{
 	@Override
 	public boolean isEmpty(){
 		return maxHeap.isEmpty();
+	}
+
+	@Override
+	public E getFront(){
+		return maxHeap.findMax();
 	}
 }
