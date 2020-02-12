@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-10 13:59:51
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-10 18:27:27
+* @Last Modified time: 2020-02-12 21:04:10
 */
 @SuppressWarnings("unchecked") 
 public class ArrayList<E>{
@@ -24,6 +24,12 @@ public class ArrayList<E>{
 		
 	}
 
+	public ArrayList(E[] arra){
+		elementsContainer = (E[])new Object[arra.length];
+		for(int i=0; i<arra.length; i++)
+			elementsContainer[i] = arra[i];
+		size = arra.length;
+	}
 
 	/*
 		to get Capacity of ArrayList;

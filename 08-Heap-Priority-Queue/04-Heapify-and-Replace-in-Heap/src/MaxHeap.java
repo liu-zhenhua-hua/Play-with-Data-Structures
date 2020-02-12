@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-10 14:01:57
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-11 23:04:28
+* @Last Modified time: 2020-02-12 21:07:23
 */
 
 public class MaxHeap<E extends Comparable<E>>{
@@ -15,6 +15,12 @@ public class MaxHeap<E extends Comparable<E>>{
 
 	public MaxHeap(){
 		data = new ArrayList<>();
+	}
+
+	public MaxHeap(E[] arra){
+		data = new Array<>(arra);
+		for(int i = parent(arra.length-1); i>=0; i--)
+			shiftDown(i);
 	}
 
 
