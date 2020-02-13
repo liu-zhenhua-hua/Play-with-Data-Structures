@@ -2,13 +2,14 @@
   Solution LeetCode #347 
 */
 import java.util.List;
+import java.util.LinkedList;
 import java.util.TreeMap;
 
 public class Solution{
 
 	private class Freq implements Comparable<Freq>{
-		int e;
-		int freq;
+		public int e;
+		public int freq;
 
 		public Freq(int e, int freq){
 			this.e = e;
@@ -38,5 +39,19 @@ public class Solution{
 
 
 		PriorityQueue<Freq> pq = new PriorityQueue<>(); 
+		for(int key: map.keySet()){
+			if(pq.getSize() < k)
+				pq.enqueue(new Freq(key,map.get(key)));
+			else if(map.get(key) > pq.getFront().freq){
+				pq.dequeue();
+				pg.enqueue(new Freq(key,map.get(key)));
+			}
+		}
+
+		LinkedList<Integer> res = new LinkedList<>();
+		while(!pq.isEmpty()){
+			res.add(pq.dequeue().e);
+		}
+		return res;
 	}
 }
