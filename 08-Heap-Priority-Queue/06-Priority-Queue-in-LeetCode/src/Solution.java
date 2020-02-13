@@ -10,6 +10,10 @@ public class Solution{
 		int e;
 		int freq;
 
+		public Freq(int e, int freq){
+			this.e = e;
+			this.freq = freq;
+		}
 
 		@Override
 		public int comparaTo(Freq another){
