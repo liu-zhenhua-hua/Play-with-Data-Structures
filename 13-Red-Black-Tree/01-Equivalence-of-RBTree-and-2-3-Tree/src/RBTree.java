@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-14 22:50:22
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-14 23:03:13
+* @Last Modified time: 2020-02-14 23:17:02
 */
 import java.util.ArrayList;
 
@@ -38,6 +38,27 @@ public class RBTree<K extends Comparable<k>, V>{
 		root = null;
 		size = 0;
 	}
+
+
+	public int getSize(){
+		return size;
+	}
+
+	public boolean isEmpty(){
+		return size == 0;
+	}
+
+
+	public boolean isRead(Node node){
+		if(node == null)
+			return BLACK;
+		return node.color;
+	}
+
+
+
+
+
 
 
 
