@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-14 22:50:22
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-15 14:29:39
+* @Last Modified time: 2020-02-15 14:54:03
 */
 import java.util.ArrayList;
 
@@ -61,6 +61,25 @@ public class RBTree<K extends Comparable<k>, V>{
 		root = add(root,key,value);
 		root.color = BLACK;
 	}
+
+
+
+	private Node leftRotate(Node node){
+		Node x = node.right;
+
+		node.right = x.left;
+
+		x.left = node;
+		x.color = node.color;
+		node.color = RED;
+
+		return x;
+	}
+
+
+
+
+
 
 
 
