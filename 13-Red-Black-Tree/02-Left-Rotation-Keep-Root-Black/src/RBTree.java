@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-14 22:50:22
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-15 09:37:52
+* @Last Modified time: 2020-02-15 14:29:39
 */
 import java.util.ArrayList;
 
@@ -57,7 +57,10 @@ public class RBTree<K extends Comparable<k>, V>{
 
 
 
-
+	public void add(K key, V value){
+		root = add(root,key,value);
+		root.color = BLACK;
+	}
 
 
 
